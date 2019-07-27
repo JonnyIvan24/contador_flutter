@@ -27,17 +27,26 @@ class _ContadorPAgeState extends State<ContadorPage> {
         ),
       ),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        //onPressed: null, //disbled = true
-        child: Icon(Icons.add),
-        onPressed: () {
-          // print('hola mundo');
+      floatingActionButton: _crearBotones()
+    );
+  }
 
-          setState(() {
-            _conteo++;
-          });
-        },
-      ),
+
+/*
+metodo para agregar botones
+*/
+  Widget _crearBotones(){
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        SizedBox(width: 30.0,),
+        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: null,),
+        Expanded(child: SizedBox()),
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: null,),
+        SizedBox(width: 5.0,),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: null,)
+      ],
     );
   }
 }
