@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class ContadorPage extends StatefulWidget {
 
-  /* 
-  en los widgets tipo less las variables deben ser inmutables
-  por lo tanto se deben de declarar como final
-  */
+  @override
+  State<StatefulWidget> createState() => _ContadorPAgeState();
+}
 
-  final textStyle = new TextStyle( fontSize: 25 );
-  final conteo = 10;
+class _ContadorPAgeState extends State<ContadorPage> {
+  final _textStyle = new TextStyle( fontSize: 25 );
+  int _conteo = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Titulo'),
+        title: Text('Stateful'),
         centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Números de clicks', style: textStyle,),
-            Text('$conteo', style: textStyle,)
+            Text('Números de clicks', style: _textStyle,),
+            Text('$_conteo', style: _textStyle,)
           ],
         ),
       ),
@@ -31,8 +31,11 @@ class HomePage extends StatelessWidget {
         //onPressed: null, //disbled = true
         child: Icon(Icons.add),
         onPressed: () {
-          print('hola mundo');
-          //conteo = conteo + 1;
+          // print('hola mundo');
+
+          setState(() {
+            _conteo++;
+          });
         },
       ),
     );
