@@ -1,6 +1,6 @@
 # contador
 
-A new Flutter project.
+Mi primera aplicación con flutter.
 
 ## Getting Started
 
